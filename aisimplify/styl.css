@@ -80,12 +80,17 @@
       transform: translateY(20px);
       transition: all .8s ease;
     }
-    #chatBoxContainer.open {
-      display: flex;
-      opacity: 1;
-      transform: translateY(0);
-      height: 70vh !important;
-    }
+    #chatBoxContainer.closing {
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    transform: translate(100%, 100%);
+    opacity: 0;
+  }
+
+  #chatBoxContainer.open {
+    transition: all .8s ease;
+    opacity: 1;
+    transform: translateY(0);
+  }
 
     /* Header */
     #chatHeader {
